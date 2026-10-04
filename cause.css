@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@700&family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #f17575, #ffe6ea, #f00c0c);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s;
+}
+
+.custom-cursor svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px rgba(243, 101, 101, 0.644));
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 3rem;
+    color: #800000;
+    text-shadow: 2px 2px 4px rgba(255, 88, 88, 0.692);
+    margin-bottom: 2rem;
+    animation: bounce 1s ease infinite;
+}
+
+.reason-card {
+    background: rgba(179, 23, 23, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.2);
+}
+
+.reason-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.gif-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(212, 34, 43, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.reason-card:hover .gif-overlay {
+    opacity: 1;
+}
+
+.shuffle-button {
+    background: linear-gradient(45deg, #800000, #8b3e3e);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.shuffle-button:hover {
+    transform: scale(1.1);
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    animation: float 3s ease-in-out infinite;
+}
+
+.ending-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.ending-text {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.teddy-hug {
+    width: 200px;
+    margin: 0 auto;
+    transform: scale(0);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .reason-card { margin: 1rem; }
+    .reason-text { font-size: 1rem; }
+}
+.shuffle-button {
+    background: linear-gradient(45deg, #800000, #912c2c);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 5px 15px rgba(177, 6, 6, 0.979);
+}
+
+.shuffle-button.story-mode {
+    background: linear-gradient(45deg, #df0909, #800000);
+    transform: scale(1.1);
+}
+
+.shuffle-button:hover {
+    transform: scale(1.1);
+}
+
+.shuffle-button.story-mode:hover {
+    transform: scale(1.2);
+}
+
+.reason-counter {
+    font-size: 0.9rem;
+    color: #800000;
+    margin-top: 1rem;
+    opacity: 0.7;
+}

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #f8e8ed, #ecd0d9, #a80303, #7a2323);;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background: rgb(151, 3, 27);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 0.2s;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #800000;
+    text-shadow: 0 0 10px rgba(194, 13, 13, 0.678);
+    margin-bottom: 2rem;
+    opacity: 0;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    color: #920202;
+    margin-bottom: 3rem;
+    min-height: 2em;
+}
+
+.cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #800000, #af0630);
+    border: none;
+    border-radius: 50px;
+    color: rgb(219, 17, 17);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(228, 10, 10, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(197, 60, 60, 0.7);
+}
+
+.floating {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .greeting { font-size: 1.2rem; }
+    .cta-button { font-size: 1rem; }
+}
